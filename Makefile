@@ -24,16 +24,17 @@ APPVERSION_M=1
 APPVERSION_N=0
 APPVERSION_P=2
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
-APPNAME = "Solana"
+APPNAME = "Kin (SPL)"
 
-APP_LOAD_PARAMS = --curve ed25519 --path "44'/501'" --appFlags 0x240 $(COMMON_LOAD_PARAMS)
+BIP44_KIN_COIN_INDEX = 2017
+APP_LOAD_PARAMS = --curve ed25519 --path "44'/$(BIP44_KIN_COIN_INDEX)'" --appFlags 0x240 $(COMMON_LOAD_PARAMS)
 
 DEFINES += $(DEFINES_LIB)
 
 ifeq ($(TARGET_NAME),TARGET_NANOX)
-	ICONNAME=icons/nanox_app_solana.gif
+	ICONNAME=icons/nanox_app_kin.gif
 else
-	ICONNAME=icons/nanos_app_solana.gif
+	ICONNAME=icons/nanos_app_kin.gif
 endif
 
 ################
